@@ -1,0 +1,32 @@
+
+import pandas as pd
+import matplotlib.pyplot as plt
+import numpy as np
+mmc1 = []
+mmc2 = []
+dados = pd.read_excel(r"/dados base.xlsx")
+data = np.array(dados["Data"])
+venda = (np.array(dados["Vendas"]))
+vendas = venda
+cont = 0
+qtd = []
+while True:
+  qtd.append(cont) 
+  cont = cont + 1
+  if cont == 46:
+    break
+x = qtd
+y = vendas
+plt.plot(x,y)
+plt.show
+alfa = 972.8297991 #obtido através do excel
+beta = -14.47202715
+#calculando a tendência
+tendencia = []
+cont = 0
+while True :
+  tendencia.append(alfa+beta * (cont+1))
+  cont = cont+ 1
+  if cont == 30 :
+    break
+print(tendencia[20],tendencia[21],tendencia[22],tendencia[23],tendencia[24])
